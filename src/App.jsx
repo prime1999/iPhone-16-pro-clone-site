@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
 	return (
-		<main className="bg-zinc h-screen">
+		<main className="overflow-x-hidden">
 			<div className="w-full bg-black">
 				<NavBar />
 				<Hero />
