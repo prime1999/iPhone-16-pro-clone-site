@@ -14,3 +14,9 @@ body {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 }
+
+.sticky-div {
+	position: sticky;
+	bottom: 10px;
+	transform: translateX(40%);
+}

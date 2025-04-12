@@ -29,7 +29,12 @@ const Highlights = () => {
 	useGSAP(() => {
 		// slider animation to move the image out of the screen and bring the next image in
 		gsap.to("#slider", {
-			transform: `translateX(${-100 * imgId}%)`,
+			transform:
+				window.innerWidth < 760
+					? `translateX(${-105 * imgId}%)` // mobile
+					: window.innerWidth < 1200
+					? `translateX(${-110 * imgId}%)` // tablet
+					: `translateX(${-100 * imgId}%)`, // laptop
 			duration: 2,
 			ease: "power2.inOut",
 		});
@@ -180,32 +185,74 @@ const Highlights = () => {
 				return sliderAnimation;
 		}
 	};
+
+	// fucntion to make the clicked dots move to the img the represent
+	const handleDotClick = (index) => {
+		const lastIndex = imgId;
+		// Kill existing animation
+		if (animRef.current) {
+			animRef.current.kill();
+		}
+		// If there was a previously active image (not the first click), reset its width and progress
+		if (lastIndex !== index) {
+			// Reset the width of the previous dot (lastIndex)
+			gsap.to(imageDivRef.current[lastIndex], {
+				width: "12px",
+			});
+			// Reset the progress bar width of the previous dot (lastIndex)
+			gsap.to(imageSpanRef.current[lastIndex], {
+				width: "0%", // Reset progress
+				backgroundColor: "#e2e8f0", // Reset color
+			});
+		}
+
+		// Update state to navigate and play
+		setSliderAnimation((prev) => ({
+			...prev,
+			imgId: index,
+			isPlaying: true,
+			stopPlay: false,
+			isLastImg: index === hightlights.length - 1,
+			startPlay: true,
+		}));
+	};
+
 	return (
-		<section className="w-screen relative my-24 section">
-			<div className="mx-auto">
-				<h1 className="text-5xl text-white font-bold ml-12 py-8 heading">
+		<section className="relative my-24 section">
+			<div className="relative mx-auto">
+				<h1 className="text-2xl lg:text-5xl text-white font-bold ml-12 py-2 lg:py-8 heading">
 					Get the highlights.
 				</h1>
-				<div className="flex items-center justify-between gap-4 overflow-x-auto my-12 no-scrollbar">
+				<div className="flex items-center justify-between gap-4 overflow-x-auto my-12 no-scrollbar w-full relative">
 					{hightlights.map((slide, i) => (
 						<div
 							id="slider"
 							key={i}
-							className={`w-[85vw] h-[650px] shrink-0 rounded-3xl overflow-hidden relative ${
-								i === 0 && "ml-16"
+							className={`w-[85vw] h-[650px] max-sm:w-[85vw] max-sm:h-[500px] bg-black shrink-0 rounded-3xl overflow-hidden flex items-center relative ${
+								i === 0 && "max-sm:ml-8 ml-16"
 							}`}
 						>
+							<div className="absolute top-10 left-10 lg:mt-8 max-md:top-10 max-md:left-[10%] z-10">
+								{slide.textLists.map((list) => (
+									<h4
+										key={list}
+										className="max-md:text-xl max-md:text-center text-2xl font-semibold text-white lg:text-4xl"
+									>
+										{list}
+									</h4>
+								))}
+							</div>
 							<img
 								src={slide.video}
 								alt={`highlight ${slide.id}`}
 								ref={(el) => (imageRef.current[i] = el)}
-								className="w-full h-full"
+								className="max-sm:w-[90vw] max-sm:scale-[1.6] max-md:scale-0 max-sm:h-[30vh] max-md:h-[1vh] w-full h-full max-md:absolute max-sm:bottom-12"
 							/>
 						</div>
 					))}
 				</div>
 			</div>
-			<div className="sticky bottom-5 left-[20%] translate-x-[40%]">
+			<div className="sticky left-[30%] translate-x-[40%] max-sm:translate-x-[10%] z-[999] sticky-div">
 				<div className="flex items-center gap-4">
 					<button className="rounded-full p-4 bg-gray-300 backdrop-blur">
 						<img
@@ -225,6 +272,7 @@ const Highlights = () => {
 							<span
 								key={i}
 								ref={(el) => (imageDivRef.current[i] = el)}
+								onClick={() => handleDotClick(i)}
 								className="w-3 h-3 relative bg-slate-200 mx-2 rounded-full cursor-pointer dot"
 							>
 								<span

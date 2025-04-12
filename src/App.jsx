@@ -11,14 +11,14 @@ import Footer from "./components/Footer";
 
 const App = () => {
 	return (
-		<main className="overflow-x-hidden">
+		<main className="overflow-x-clip">
 			<div className="w-full bg-black">
 				<NavBar />
 				<Hero />
 			</div>
 			<Highlights />
-			{/*	<CloserLook />
-			<CameraControl />
+			<CloserLook />
+			{/*<CameraControl />
 			<GetProVideos />
 			<ZoomIn />
 			<Gaming />
