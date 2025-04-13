@@ -33,7 +33,7 @@ const Highlights = () => {
 				window.innerWidth < 760
 					? `translateX(${-105 * imgId}%)` // mobile
 					: window.innerWidth < 1200
-					? `translateX(${-110 * imgId}%)` // tablet
+					? `translateX(${-102 * imgId}%)` // tablet
 					: `translateX(${-100 * imgId}%)`, // laptop
 			duration: 2,
 			ease: "power2.inOut",
@@ -228,7 +228,7 @@ const Highlights = () => {
 						<div
 							id="slider"
 							key={i}
-							className={`w-[85vw] h-[650px] max-sm:w-[85vw] max-sm:h-[500px] bg-black shrink-0 rounded-3xl overflow-hidden flex items-center relative ${
+							className={`xl:w-[85vw] h-[650px] max-sm:w-[85vw] max-sm:h-[500px] md:w-[80vw] lg:w-[90vw] bg-black shrink-0 rounded-3xl overflow-hidden flex items-center relative ${
 								i === 0 && "max-sm:ml-8 ml-16"
 							}`}
 						>
@@ -236,7 +236,7 @@ const Highlights = () => {
 								{slide.textLists.map((list) => (
 									<h4
 										key={list}
-										className="max-md:text-xl max-md:text-center text-2xl font-semibold text-white lg:text-4xl"
+										className="max-md:text-xl max-md:text-center text-2xl font-semibold text-white lg:text-3xl xl:text-4xl"
 									>
 										{list}
 									</h4>
@@ -246,7 +246,7 @@ const Highlights = () => {
 								src={slide.video}
 								alt={`highlight ${slide.id}`}
 								ref={(el) => (imageRef.current[i] = el)}
-								className="max-sm:w-[90vw] max-sm:scale-[1.6] max-md:scale-0 max-sm:h-[30vh] max-md:h-[1vh] w-full h-full max-md:absolute max-sm:bottom-12"
+								className="max-sm:w-[90vw] max-sm:scale-[1.6] md:scale-[1.2] max-sm:h-[30vh] md:h-[45vh] lg:w-full lg:h-full xl:scale-[1] md:bottom-10 md:absolute max-sm:absolute max-sm:bottom-12 xl:absolute xl:bottom-0 lg:relative lg:botom-0"
 							/>
 						</div>
 					))}
