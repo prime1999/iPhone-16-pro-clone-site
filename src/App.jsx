@@ -19,8 +19,8 @@ const App = () => {
 			<Highlights />
 			<CloserLook />
 			<CameraControl />
-			{/*<GetProVideos />
-			<ZoomIn />
+			<GetProVideos />
+			{/*<ZoomIn />
 			<Gaming />
 			<KeepExploring />
 			<Footer /> */}
