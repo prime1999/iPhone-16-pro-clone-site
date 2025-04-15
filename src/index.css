@@ -20,3 +20,10 @@ body {
 	bottom: 10px;
 	transform: translateX(40%);
 }
+
+.text-shadow {
+	text-shadow: -1px -1px 1px white, -1px 1px 1px white, 1px -1px 1px white,
+		1px 1px 1px white, 0 0 3px white, 0 0 10px white, 0 0 20px white,
+		0 0 30px #ff6600, 0 0 40px #ff6600, 0 0 50px #ff6600, 0 0 70px #ff6600,
+		0 0 100px #ff6600;
+}

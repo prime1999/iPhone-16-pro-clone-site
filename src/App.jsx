@@ -18,8 +18,8 @@ const App = () => {
 			</div>
 			<Highlights />
 			<CloserLook />
-			{/*<CameraControl />
-			<GetProVideos />
+			<CameraControl />
+			{/*<GetProVideos />
 			<ZoomIn />
 			<Gaming />
 			<KeepExploring />

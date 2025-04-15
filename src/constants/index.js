@@ -1,4 +1,8 @@
 import {
+	camera1Img,
+	camera2Img,
+	camera3Img,
+	cameracontrolImg,
 	highlightImage1Img,
 	highlightImage2Img,
 	highlightImage3Img,
@@ -91,5 +95,35 @@ export const modelSlides = [
 		text: "6.9” iPhone 16 Pro Max1 & 6.3” iPhone 16 Pro1 in Desert Titanium",
 		img: model5Img,
 		type: "desert",
+	},
+];
+
+export const cameraControlSlides = [
+	{
+		id: 1,
+		text: ["In video mode,", "click to start recording."],
+		img: camera1Img,
+	},
+	{
+		id: 2,
+		text: [
+			"Click to launch the Camera app. Click again to",
+			"instantly take a photo.",
+		],
+		img: camera2Img,
+	},
+	{
+		id: 1,
+		text: ["A light press ", "opens controls like zoom."],
+		img: camera3Img,
+	},
+	{
+		id: 1,
+		text: [
+			"With a double light press, you can",
+			"select another camera setting.",
+			"Then slide to adjust that setting.",
+		],
+		img: cameracontrolImg,
 	},
 ];
