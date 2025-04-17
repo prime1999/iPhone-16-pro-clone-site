@@ -101,7 +101,7 @@ const CameraControl = () => {
 					</span>
 				</div>
 			</div>
-			<div className="absolute right-10 bottom-20 text-white flex gap-4 text-2xl font-semibold">
+			<div className="absolute right-10 bottom-[100px] text-white flex gap-4 text-2xl font-semibold">
 				<button
 					disabled={imgId === 0}
 					onClick={() => handleMove(imgId - 1)}

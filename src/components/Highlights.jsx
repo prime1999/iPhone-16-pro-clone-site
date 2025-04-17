@@ -124,7 +124,7 @@ const Highlights = () => {
 					}
 				},
 			});
-			// restart  the progress animation when the image is back to the first image(once the image resets)
+			// restart the progress animation when the image is back to the first image(once the image resets)
 			if (imgId == 0) {
 				animRef.current.restart();
 			}
@@ -236,7 +236,7 @@ const Highlights = () => {
 								{slide.textLists.map((list) => (
 									<h4
 										key={list}
-										className="max-md:text-xl max-md:text-center text-2xl font-semibold text-white lg:text-3xl xl:text-4xl"
+										className="max-md:text-lg max-md:text-center text-2xl font-semibold text-white lg:text-2xl"
 									>
 										{list}
 									</h4>
@@ -267,13 +267,13 @@ const Highlights = () => {
 							}
 						/>
 					</button>
-					<div className="relative w-60 flex items-center justify-center rounded-full bg-gray-300 backdrop-blur py-5 px-4">
+					<div className="relative w-48 flex items-center justify-center rounded-full bg-gray-300 backdrop-blur py-5 px-4 lg:w-60">
 						{hightlights.map((_, i) => (
 							<span
 								key={i}
 								ref={(el) => (imageDivRef.current[i] = el)}
 								onClick={() => handleDotClick(i)}
-								className="w-3 h-3 relative bg-slate-200 mx-2 rounded-full cursor-pointer dot"
+								className="w-2 h-2 relative bg-slate-200 mx-2 rounded-full cursor-pointer lg:w-3 lg:h-3 dot"
 							>
 								<span
 									// to keep track of the playing progress

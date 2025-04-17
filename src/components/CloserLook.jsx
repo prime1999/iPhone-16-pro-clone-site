@@ -58,7 +58,7 @@ const CloserLook = () => {
 			</div>
 			<div className="sticky bottom-10 z-[999]">
 				<div className="w-full flex flex-col items-center justify-center">
-					<span className="bg-white/5 backdrop-blur-md rounded-lg mb-4 text-sm font-semibold px-2 py-1">
+					<span className="bg-white/5 backdrop-blur-md rounded-lg mb-4 text-xs text-center font-semibold px-2 py-1 md:text-sm">
 						{showSelected?.text}
 					</span>
 
