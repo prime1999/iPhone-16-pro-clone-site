@@ -5,7 +5,6 @@ import { modelSlides } from "../constants";
 const CloserLook = () => {
 	const [selected, setSelected] = useState("mixed");
 	const [showSelected, setShowSelected] = useState(modelSlides[0]);
-	const colours = ["#181919", "#D3D1CD", "#959086", "#977E6B"];
 
 	useEffect(() => {
 		if (selected) {

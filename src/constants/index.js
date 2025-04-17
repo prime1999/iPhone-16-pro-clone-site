@@ -14,6 +14,13 @@ import {
 	model3Img,
 	model4Img,
 	model5Img,
+	zoom1Img,
+	zoom2Img,
+	zoom3Img,
+	zoom4Img,
+	zoom5Img,
+	zoom6Img,
+	zoomMarcoImg,
 } from "../utils";
 
 export const navList = ["Mac", "iPad", "iPhone", "Support", "Where to Buy"];
@@ -125,5 +132,50 @@ export const cameraControlSlides = [
 			"Then slide to adjust that setting.",
 		],
 		img: cameracontrolImg,
+	},
+];
+
+export const zoomSlides = [
+	{
+		id: 1,
+		img: zoomMarcoImg,
+		label: "marco",
+		text: ["0.5x", "Macro"],
+	},
+	{
+		id: 2,
+		img: zoom1Img,
+		label: "13mm",
+		text: ["0.5x", "Ultra Wide"],
+	},
+	{
+		id: 3,
+		img: zoom2Img,
+		label: "24mm",
+		text: ["1x", "Fusion 24mm"],
+	},
+	{
+		id: 4,
+		img: zoom3Img,
+		label: "28mm",
+		text: ["1.2x", "Fusion 28mm"],
+	},
+	{
+		id: 5,
+		img: zoom4Img,
+		label: "35mm",
+		text: ["1.5x", "Fusion 35mm"],
+	},
+	{
+		id: 6,
+		img: zoom5Img,
+		label: "48mm",
+		text: ["2x", "Telephoto"],
+	},
+	{
+		id: 7,
+		img: zoom6Img,
+		label: "120mm",
+		text: ["5x", "Telephoto"],
 	},
 ];

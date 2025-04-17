@@ -20,10 +20,10 @@ const App = () => {
 			<CloserLook />
 			<CameraControl />
 			<GetProVideos />
-			{/*<ZoomIn />
-			<Gaming />
+			<ZoomIn />
+			{/*<Gaming />*/}
 			<KeepExploring />
-			<Footer /> */}
+			{/* <Footer />  */}
 		</main>
 	);
 };

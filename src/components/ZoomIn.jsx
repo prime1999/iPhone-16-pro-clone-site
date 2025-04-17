@@ -1,7 +1,12 @@
-import React from "react";
+import { ZoomDesktopView, ZoomMobileView } from "./ZoomInView";
 
 const ZoomIn = () => {
-	return <div>ZoomIn</div>;
+	return (
+		<>
+			<ZoomDesktopView />
+			<ZoomMobileView />
+		</>
+	);
 };
 
 export default ZoomIn;
