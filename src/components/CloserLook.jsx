@@ -1,3 +1,5 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { modelSlides } from "../constants";
@@ -15,10 +17,28 @@ const CloserLook = () => {
 			setShowSelected(filteredSlides[0]);
 		}
 	}, [selected]);
+
+	// for the heading animation
+	useGSAP(() => {
+		gsap.fromTo(
+			".heading2",
+			{ y: 40, opacity: 0 },
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				ease: "power1.inOut",
+				scrollTrigger: {
+					trigger: ".section",
+					toggleActions: "restart none none none",
+				},
+			}
+		);
+	}, []);
 	return (
 		<section className="w-screen bg-black py-32 text-white">
 			<div className="flex flex-col w-full h-[100vh] my-2 lg:my-12">
-				<h1 className="text-5xl font-bold px-12 max-md:px-4 max-md:text-3xl">
+				<h1 className="text-5xl font-bold px-12 max-md:px-4 max-md:text-3xl heading2">
 					Take a Closer Look.
 				</h1>
 				<div className="w-full flex  justify-center items-center relative h-[100vh] overflow-hidden">

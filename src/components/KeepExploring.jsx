@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import {
 	batteryImg,
 	cameraImg,
@@ -14,9 +16,26 @@ import {
 } from "../utils";
 
 const KeepExploring = () => {
+	// for the heading animation
+	useGSAP(() => {
+		gsap.fromTo(
+			".heading3",
+			{ y: 40, opacity: 0 },
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				ease: "power1.inOut",
+				scrollTrigger: {
+					trigger: ".section",
+					toggleActions: "restart none none none",
+				},
+			}
+		);
+	}, []);
 	return (
-		<section className="my-12 w-full mx-auto lg:w-10/12">
-			<div className="flex justify-between items-center max-lg:px-8 max-lg:flex-col max-lg:items-start">
+		<section className="my-48 w-full mx-auto lg:w-10/12">
+			<div className="flex justify-between items-center max-lg:px-8 max-lg:flex-col max-lg:items-start heading3">
 				<h1 className="text-white text-2xl font-semibold mb-2 md:text-4xl xl:text-5xl">
 					Keep Exploring iPhone
 				</h1>

@@ -252,7 +252,7 @@ const Highlights = () => {
 					))}
 				</div>
 			</div>
-			<div className="sticky left-[30%] translate-x-[40%] max-sm:translate-x-[10%] z-[999]">
+			<div className="sticky bottom-10 left-[30%] translate-x-[40%] max-sm:translate-x-[10%] z-[999]">
 				<div className="flex items-center gap-4">
 					<button className="rounded-full p-4 bg-gray-300 backdrop-blur">
 						<img
