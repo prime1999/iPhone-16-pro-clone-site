@@ -1,7 +1,7 @@
 const OnScollNav = () => {
 	return (
-		<nav className="w-full px-48 text-white py-2 fixed top-0 left-0 right-0 flex items-center justify-between bg-gray-300 backdrop-blur-[5px] shadow-lg z-[999] -translate-y-[100%] border-b border-gray">
-			<h1 className="font-semibold text-xl">iPhone 16 Pro</h1>
+		<nav className="w-9/12 h-full mx-auto px-4 py-2 flex items-center justify-between max-lg:hidden">
+			<h1 className="font-semibold text-xl text-white">iPhone 16 Pro</h1>
 			<div className="flex items-center justify-center gap-4 text-xs text-gray-200 font-semibold">
 				<p className="cursor-pointer hover:text-white">Overview</p>
 				<p className="cursor-pointer hover:text-white">Tech Specs</p>

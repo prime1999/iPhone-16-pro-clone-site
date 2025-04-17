@@ -8,11 +8,11 @@ import OnScollNav from "./OnScollNav";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
-	const navRef = useRef(null);
+	const navBarRef = useRef(null);
 
 	useGSAP(() => {
 		gsap.fromTo(
-			navRef.current,
+			navBarRef.current,
 			{ y: -100, opacity: 0 },
 			{
 				y: 0,
@@ -20,7 +20,7 @@ const Hero = () => {
 				duration: 0.5,
 				ease: "power3.inOut",
 				scrollTrigger: {
-					trigger: ".trigger-section",
+					trigger: ".trigger",
 					start: "top end",
 					toggleActions: "play none none reverse",
 				},
@@ -29,18 +29,23 @@ const Hero = () => {
 	}, []);
 	return (
 		<>
-			<div ref={navRef}>
-				<OnScollNav />
-			</div>
-			<section className="flex items-center justify-center scroll-trigger">
-				<img
-					src={heroImg}
-					alt="big phone image"
-					className="py-12 max-sm:hidden"
-				/>
-				<div className="flex flex-col items-center justify-center py-24 md:hidden">
-					<h1 className="text-white text-2xl font-semibold">IPhone 16 Pro</h1>
-					<img src={smallHeroImg} alt="small phone image" className="w-72" />
+			<section className="w-full relative">
+				<div
+					ref={navBarRef}
+					className="fixed top-0 left-0 right-0 bg-gray-300 backdrop-blur-[10px] shadow-lg z-[999] border-b border-gray -translate-y-[100%]"
+				>
+					<OnScollNav />
+				</div>
+				<div className="flex items-center justify-center trigger">
+					<img
+						src={heroImg}
+						alt="big phone image"
+						className="py-12 max-sm:hidden"
+					/>
+					<div className="flex flex-col items-center justify-center py-24 md:hidden">
+						<h1 className="text-white text-2xl font-semibold">IPhone 16 Pro</h1>
+						<img src={smallHeroImg} alt="small phone image" className="w-72" />
+					</div>
 				</div>
 			</section>
 		</>
