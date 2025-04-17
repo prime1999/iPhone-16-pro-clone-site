@@ -23,7 +23,7 @@ const App = () => {
 			<ZoomIn />
 			{/*<Gaming />*/}
 			<KeepExploring />
-			{/* <Footer />  */}
+			<Footer />
 		</main>
 	);
 };
